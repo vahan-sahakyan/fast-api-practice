@@ -42,8 +42,22 @@ def get_products(
 
 
 @router.get("/{id}", responses={
-    200: {"content": {"text/html": {"example": "<div>Product</div>"}}, "description": "Returns the HTML for an object"},
-    404: {"content": {"text/plain": {"example": "Product not available"}}, "description": "A plain text error message"},
+    200: {
+        "content": {
+            "text/html": {
+                "example": "<div>Product</div>"
+            }
+        },
+        "description": "Returns the HTML for an object"
+    },
+    404: {
+        "content": {
+            "text/plain": {
+                "example": "Product not available"
+            }
+        },
+        "description": "A plain text error message"
+    },
 })
 def get_product(id: int):
     if id > len(products):
